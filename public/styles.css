@@ -1,0 +1,246 @@
+/* ===============================
+   GLOBAL
+================================ */
+/* Prevent mobile viewport jump */
+html, body {
+  min-height: 100dvh; /* dynamic viewport height */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* ===============================
+   CARD
+================================ */
+.card {
+  background: rgba(22, 27, 42, 0.7);
+  backdrop-filter: blur(16px);
+  padding: 32px;
+  border-radius: 18px;
+  width: 360px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.55);
+}
+
+.card h2 {
+  margin-bottom: 6px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 18px;
+}
+
+/* ===============================
+   INPUT (PROFESSIONAL)
+================================ */
+input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(148,163,184,0.25);
+  background: rgba(15, 23, 42, 0.85);
+  color: #f8fafc;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+input::placeholder {
+  color: #64748b;
+}
+
+input:focus {
+  border-color: #38bdf8;
+  box-shadow:
+    0 0 0 3px rgba(56,189,248,0.25),
+    0 10px 25px rgba(56,189,248,0.25);
+}
+
+/* ===============================
+   BUTTON
+================================ */
+button {
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  color: #020617;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(56,189,248,0.45);
+}
+
+button:active {
+  transform: translateY(0);
+}
+/* ===============================
+   ERROR MESSAGE
+================================ */
+.error-text {
+  display: block;
+  margin-top: 8px;
+  color: #f87171;
+  font-size: 0.8rem;
+  min-height: 16px; /* prevents layout jump */
+}
+
+/* ===============================
+   LOADING STATE
+================================ */
+button.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+/* ===============================
+   QR PREVIEW
+================================ */
+.qr-preview {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.qr-preview img {
+  width: 180px;
+  height: 180px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  background: #fff;
+  padding: 10px;
+}
+
+.download-btn {
+  display: flow-root;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: rgba(56,189,248,0.15);
+  color: #38bdf8;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(56,189,248,0.3);
+}
+
+.download-btn:hover {
+  background: rgba(56,189,248,0.25);
+}
+
+.hidden {
+  display: none;
+}
+/* ===============================
+   RESPONSIVE DESIGN
+================================ */ 
+/* ===============================
+   MOBILE POLISH
+================================ */
+@media (max-width: 480px) {
+  body {
+    padding: 16px;
+    height: auto; /* prevent jump with mobile keyboard */
+  }
+
+  .card {
+    width: 100%;
+    padding: 24px;
+    border-radius: 16px;
+  }
+
+  .card h2 {
+    font-size: 1.25rem;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+  }
+
+  input {
+    padding: 16px;          /* bigger tap target */
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 16px;          /* thumb-friendly */
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .qr-preview img {
+    width: 160px;
+    height: 160px;
+    padding: 8px;
+  }
+
+  .download-btn {
+    padding: 12px 18px;
+    font-size: 0.95rem;
+  }
+}
+button:active,
+.download-btn:active {
+  transform: scale(0.98);
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body {
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px;
+}
+.card {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+@media (max-width: 480px) {
+  .card {
+    padding: 22px;
+  }
+
+  .qr-preview {
+    margin-top: 24px;
+  }
+}
+.qr-preview::before {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  margin-bottom: 16px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.15),
+    transparent
+  );
+}
+.qr-preview img {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+button.loading {
+  cursor: wait;
+}

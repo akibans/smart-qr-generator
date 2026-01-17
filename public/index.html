@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart QR Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <link rel="stylesheet" href="styles.css" />
+
+  
+</head>
+<body>
+
+<div class="card">
+  <h2>Smart QR Generator</h2>
+  <p>Enter a URL to generate a QR code</p>
+
+ <form id="qrForm" action="javascript:void(0)" novalidate>
+  <input
+    id="url"
+    type="text"
+    placeholder="google.com or https://example.com"/>
+  <small id="error" class="error-text"></small>
+  <button id="generateBtn" type="button">
+    Generate QR
+  </button>
+</form>
+
+<!-- QR Preview -->
+<div id="preview" class="qr-preview hidden">
+  <img id="qrImage" alt="QR Preview" />
+  <a id="downloadBtn" class="download-btn" download="qr-code.png">
+    Download QR
+  </a>
+</div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+
+
+</body>
+</html>
