@@ -11,7 +11,7 @@ https://smart-qr-generator-m7rk.onrender.com
 ## 📸 Preview
 
 > Screenshot of the application UI  
-(Add `qr-generator.webp` or `.png` here later)
+
 
 ---
 
